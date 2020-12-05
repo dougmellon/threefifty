@@ -1,0 +1,28 @@
+{% extends 'theme.html' %}
+
+{% block main  %}
+    {% load markdown_extras %}
+
+    {% for post in object_list %}
+        <main class="bg-dark text-light">
+            <div class="container">
+                <div class="text">
+                    <div class="card">
+                        <div class="card-header bg-primary">
+                            <h2>
+                                {{ post.title }}
+                            </h2>
+                        </div>
+
+                        <div class="card-body text-dark">
+                            <div class="row">
+                                <p>{{ post.body | markdown | safe }}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </main>
+    {% endfor %}
+{% endblock main  %}

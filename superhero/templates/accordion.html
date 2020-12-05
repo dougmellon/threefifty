@@ -1,0 +1,42 @@
+{% block main %}
+    <div class="accordion" id="heroMisc">
+        <div class="card">
+            <div class="card-header" id="About">
+                <h2 class="mb-0">
+                    <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseAbout"
+                            aria-expanded="true" aria-controls="collapseAbout">
+                        About {{ object.name }}
+                    </button>
+                </h2>
+            </div>
+            <div id="collapseAbout" class="collapse show" aria-labelledby="About" data-parent="#heroMisc">
+                <div class="card-body text-dark text-left">
+                    {{ object.name }} loves {{ object.food }} and always gets some when they are in their hometown of
+                    {{ object.city }}, {{ object.state }}! Their favorite comic is {{ object.comic }}.
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-header" id="Characteristics">
+                <h2 class="mb-0">
+                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse"
+                            data-target="#collapseCharacteristics" aria-expanded="false"
+                            aria-controls="collapseCharacteristics">
+                        Characteristics
+                    </button>
+                </h2>
+            </div>
+            <div id="collapseCharacteristics" class="collapse" aria-labelledby="Characteristics"
+                 data-parent="#heroMisc">
+                <div class="card-body text-dark text-left">
+                    <ul>
+                        <li>Food: {{ object.food }}</li>
+                        <li>City: {{ object.city }}</li>
+                        <li>State: {{ object.state }}</li>
+                        <li>Comic: {{ object.comic }}</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
